@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\Setup\StudentClassController;
 use App\Http\Controllers\Backend\Setup\StudentGroupController;
 use App\Http\Controllers\Backend\Setup\StudentShiftController;
 use App\Http\Controllers\Backend\Setup\StudentYearController;
+use App\Http\Controllers\Backend\Student\StudentRegController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
@@ -252,5 +253,16 @@ Route::prefix('setups')->group(function (){
     Route::post('designation/update/{id}', [DesignationController::class, 'DesignationUpdate'])->name('designation.update');
     Route::get('designation/delete/{id}', [DesignationController::class, 'DesignationDelete'])->name('designation.delete');
 
+});
+
+
+
+//User Profile and Change Password
+Route::prefix('students')->group(function (){
+    Route::get('/reg/view', [StudentRegController::class, 'StudentRegView'])->name('student.registration.view');
+//    Route::get('/edit', [ProfileController::class, 'ProfileEdit'])->name('profile.edit');
+//    Route::post('/store', [ProfileController::class, 'ProfileStore'])->name('profile.store');
+//    Route::get('/password', [ProfileController::class, 'PasswordView'])->name('password.view');
+//    Route::post('/password/update', [ProfileController::class, 'PasswordUpdate'])->name('password.update');
 });
 

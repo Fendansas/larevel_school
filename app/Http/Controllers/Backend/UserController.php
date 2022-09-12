@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function UserView(){
 
-        $users = User::all();
+        $users = User::where('usertype', 'Admin')->get();
 
         return view('backend.user.view_user', compact('users'));
     }
@@ -29,10 +29,13 @@ class UserController extends Controller
         ]);
 
         $user = new User;
-        $user->usertype = $request->usertype;
+        $code = rand(0000,9999);
+        $user->usertype = 'Admin';
+        $user->role = $request->role;
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = bcrypt($request->password);
+        $user->password = bcrypt($code);
+        $user->code = $code;
         $user->save();
 
         $notification = array(
@@ -57,7 +60,7 @@ class UserController extends Controller
 
 
         $user = User::find($id);
-        $user->usertype = $request->usertype;
+        $user->role = $request->role;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->save();
