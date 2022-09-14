@@ -257,11 +257,14 @@ Route::prefix('setups')->group(function (){
 
 
 
-//User Profile and Change Password
+//Student registration routes
 Route::prefix('students')->group(function (){
     Route::get('/reg/view', [StudentRegController::class, 'StudentRegView'])->name('student.registration.view');
+    Route::get('/reg/add', [StudentRegController::class, 'StudentRegAdd'])->name('student.registration.add');
+    Route::post('/reg/store', [StudentRegController::class, 'StudentRegStore'])->name('store.student.registration');
+    Route::get('/student/year/wise', [StudentRegController::class, 'StudentClassYearWise'])->name('student.year.class.wise');
 //    Route::get('/edit', [ProfileController::class, 'ProfileEdit'])->name('profile.edit');
-//    Route::post('/store', [ProfileController::class, 'ProfileStore'])->name('profile.store');
+
 //    Route::get('/password', [ProfileController::class, 'PasswordView'])->name('password.view');
 //    Route::post('/password/update', [ProfileController::class, 'PasswordUpdate'])->name('password.update');
 });
