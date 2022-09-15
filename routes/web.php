@@ -263,6 +263,7 @@ Route::prefix('students')->group(function (){
     Route::get('/reg/add', [StudentRegController::class, 'StudentRegAdd'])->name('student.registration.add');
     Route::post('/reg/store', [StudentRegController::class, 'StudentRegStore'])->name('store.student.registration');
     Route::get('/student/year/wise', [StudentRegController::class, 'StudentClassYearWise'])->name('student.year.class.wise');
+    Route::get('/reg/edit/{student_id}', [StudentRegController::class, 'StudentRegEdit'])->name('student.registration.edit');
 //    Route::get('/edit', [ProfileController::class, 'ProfileEdit'])->name('profile.edit');
 
 //    Route::get('/password', [ProfileController::class, 'PasswordView'])->name('password.view');

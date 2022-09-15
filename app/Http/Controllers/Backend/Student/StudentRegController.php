@@ -169,6 +169,19 @@ class StudentRegController extends Controller
 
     }
 
+    public function StudentRegEdit($student_id){
+
+        $years = StudentYear::all();
+        $classes = StudentClass::all();
+        $groups = StudentGroup::all();
+        $shifts = StudentShift::all();
+
+        $editData = AssignStudent::with(['student', 'discount'])->where('student_id',$student_id)->first();
+
+        return view('backend.student.student_reg.student_edit', compact('years','classes','groups','shifts','editData'));
+
+    }
+
 
 
 
