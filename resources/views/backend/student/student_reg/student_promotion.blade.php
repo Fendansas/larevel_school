@@ -16,13 +16,13 @@
                 <!-- Basic Forms -->
                 <div class="box">
                     <div class="box-header with-border">
-                        <h4 class="box-title">Edit Student</h4>
+                        <h4 class="box-title">Student Promotion</h4>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="row">
                             <div class="col">
-                                <form method="post" action="{{ route('update.student.registration',$editData->student_id) }}"
+                                <form method="post" action="{{ route('promotion.student.registration',$editData->student_id) }}"
                                       enctype="multipart/form-data">
                                     @csrf
                                     <input type="hidden" name="id" value="{{$editData->id}}">
@@ -227,7 +227,7 @@
                                         <div class="col-12">
                                             <div class="text-xs-right">
                                                 <input type="submit" class="btn btn-rounded btn-info md-5"
-                                                       value="Update"></input>
+                                                       value="Promotion"></input>
                                             </div>
                                         </div>
                                     </div>
