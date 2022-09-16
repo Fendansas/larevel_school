@@ -89,7 +89,7 @@
                                             @if(Auth::user()->role == "Admin")
                                                 <th>Code</th>
                                             @endif
-                                            <th width="25%">Action</th>
+                                            <th>Action</th>
 
                                         </tr>
                                         </thead>
@@ -110,10 +110,12 @@
                                                 <td>{{$value->year_id}}</td>
                                                 <td>{{$value->year_id}}</td>
                                                 <td>
-                                                    <a href="{{ route('student.registration.edit', $value->student_id) }}"
-                                                       class="btn btn-info">Edit</a>
-                                                    <a href="{{ route('student.registration.promotion', $value->student_id) }}"
-                                                       id="" class="btn btn-danger">Promotion</a>
+                                                    <a title="Edit" href="{{ route('student.registration.edit', $value->student_id) }}"
+                                                       class="btn btn-info"><i class="fa fa-edit"></i> </a>
+                                                    <a title="Promotion" href="{{ route('student.registration.promotion', $value->student_id) }}"
+                                                       id="" class="btn btn-danger"><i class="fa fa-check"></i></a>
+                                                    <a target="_blank" title="Details" href="{{ route('student.registration.details', $value->student_id) }}"
+                                                       id="" class="btn btn-danger"><i class="fa fa-eye"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -130,7 +132,7 @@
                                             @if(Auth::user()->role == "Admin")
                                                 <th>Code</th>
                                             @endif
-                                            <th width="25%">Action</th>
+                                            <th>Action</th>
                                         </tr>
                                         </tfoot>
                                     </table>
@@ -148,7 +150,7 @@
                                             @if(Auth::user()->role == "Admin")
                                                 <th>Code</th>
                                             @endif
-                                            <th width="25%">Action</th>
+                                            <th>Action</th>
 
                                         </tr>
                                         </thead>
@@ -168,10 +170,12 @@
                                                 </td>
                                                 <td>{{$value->year_id}}</td>
                                                 <td>
-                                                    <a href="{{ route('student.registration.edit', $value->student_id) }}"
-                                                       class="btn btn-info">Edit</a>
-                                                    <a href="{{ route('student.registration.promotion', $value->student_id) }}"
-                                                       id="" class="btn btn-danger">Promotion</a>
+                                                    <a title="Edit" href="{{ route('student.registration.edit', $value->student_id) }}"
+                                                       class="btn btn-info"><i class="fa fa-edit"></i> </a>
+                                                    <a title="Promotion" href="{{ route('student.registration.promotion', $value->student_id) }}"
+                                                       id="" class="btn btn-danger"><i class="fa fa-check"></i></a>
+                                                    <a target="_blank" title="Details" href="{{ route('student.registration.details', $value->student_id) }}"
+                                                       id="" class="btn btn-danger"><i class="fa fa-eye"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -188,7 +192,7 @@
                                             @if(Auth::user()->role == "Admin")
                                                 <th>Code</th>
                                             @endif
-                                            <th width="25%">Action</th>
+                                            <th>Action</th>
                                         </tr>
                                         </tfoot>
                                     </table>
